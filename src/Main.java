@@ -1,3 +1,7 @@
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -25,6 +29,26 @@ public class Main {
                 System.out.println(numeros[i]);
             }
         } while (i < numeros.length);
+
+        /* Crie um programa que recebe como input o nome de uma pessoa e a data de nascimento.
+        A partir desses dados, o programa deve calcular quantos anos a pessoa tem e a saída
+        deve ser o nome que a pessoa digitou e a idade dessa pessoa.*/
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite seu nome:");
+        String nome = scanner.nextLine();
+
+        System.out.println("Agora, digite seu ano de nascimento:");
+        int anoNascimento = scanner.nextInt();
+
+        Calendar calendario = Calendar.getInstance();
+        int anoAtual = calendario.get(Calendar.YEAR);
+
+        int idade = anoAtual - anoNascimento;
+        scanner.close();
+        System.out.println("Olá! " + nome + "! " + "Sua idade no ano de " + anoAtual + " é " + idade + "!");
+
 
     }
 }
